@@ -1,12 +1,14 @@
-'scopeName': 'source.asm.x86'
+'scopeName': 'source.asm.arm'
 'fileTypes': [
   'asm'
+  'ASM'
   's'
+  'S'
 ]
-'name': 'x86 Assembly'
+'name': 'ARM Assembly'
 'patterns': [
   {
-    'match': '[;#].*$'
+    'match': '[@;].*$'
     'name': 'comment.line'
   }
   {
@@ -24,7 +26,7 @@
     'name': 'support.type.asm'
   }
   {
-    'match': '\\.(data|bss|text)$'
+    'match': '\\.((|ro)data|bss|text)$'
     'name': 'string.section'
   }
   {
@@ -113,7 +115,7 @@
     ]
   }
   {
-    'begin': '^\\s*[%#]\\s*(define|defined|elif|else|if|ifdef|ifndef|line|pragma|undef|endif)\\b'
+    'begin': '^\\s*[%#]\\s*(define|defined|elif|else|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|line|pragma|undef|endif)\\b'
     'captures':
       '1':
         'name': 'keyword.control.import.c'
@@ -127,11 +129,11 @@
     ]
   }
   {
-    'match': '\\b(aaa|aad|aam|aas|adc|add|and|arpl|bound|bsf|bsr|bswap|bt|btc|btr|bts|call|cbw|cdq|clc|cld|cli|clts|cmc|cmp|cmps|cmpxchg|cwd|cwde|daa|das|dec|div|enter|esc|hlt|idiv|imul|in|inc|ins|int|int1|int3|into|invd|invlpg|iret|iretd|ja|jae|jb|jbe|jc|jcxz|je|jecxz|jg|jge|jl|jle|jmp|jna|jnae|jnb|jnbe|jnc|jne|jng|jnge|jnl|jnle|jno|jnp|jns|jnz|jo|jp|jpe|jpo|js|jz|lahf|lar|lds|lea|leave|les|lfs|lgdt|lidt|lgs|lldt|lmsw|lock|lods|loop|loope|loopz|loopnz|loopne|lsl|lss|ltr|mov|movs|movsx|movzx|mul|near|neg|nop|not|or|out|outs|pop|popa|popad|popf|popfd|push|pusha|pushad|pushf|pushfd|rcl|rcr|rep|repe|repz|repne|repnz|ret|retf|rol|ror|sahf|sal|salc|sar|sbb|scas|seta|setae|setnb|setnbe|setb|setnae|setnl|setbe|setna|sete|setz|setne|setnz|setl|setnge|setge|setng|setle|setng|setg|setnle|sets|setns|setc|setnc|seto|setno|setp|setpe|setnp|setpo|sgdt|sidt|shl|shld|shr|shrd|sldt|smsw|stc|std|sti|stos|str|sub|syscall|test|verr|verw|wait|fwait|wait|fwait|wbinvd|xadd|xchg|xlat|xlatb|xor)(l|w|b|q)?\\b'
+    'match': '\\b(it(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al)))|(mrs|adc(|s)|add(|s)|adr|and(|s)|asr(|s)|b|bfc|bfi|bic(|s)|bl|blx|bx|cb(|n)z|cdp|cdp2|clrex|clz|cmn|cmp|cpy|dbg|dmb|dsb|eor(|s)|isb|ldc(|l)|ldc2(|l)|ldm|ldmdb|ldmea|ldr(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|lsl(|s)|lsr(|s)|mcr(|r)(|2)|mla|mls|mov(|s|t)|mrc(|2)|mrrc(|2)|mrs|msr|mul(|s)|mvn(|s)|neg|nop|orn(|s)|orr(|s)|pld|pli|pop|push|rbit|rev(|16|sh)|ror(|s)|rrx(|s)|rsb|sbc(|s)|sbfx|sdiv|sev|smlal|smull|ssat|stc(|2)(|l)|stm(|ia|ea)|str(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|sub(|s)|svc|sxt(b|h)|tbb|tbh|teq|tst|ubfx|udiv|umlal|umull|usat|uxtb|uxth|wfe|wfi|yield|(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al))|cb(|n)z|bkpt|cps(ie|id)|rsbs)?\\b'
     'name': 'keyword.mnemonic'
   }
   {
-    'match': '\\b%?(ip|eip|eax|ebx|ecx|edx|edi|esi|ebp|esp|ax|bx|cx|dx|di|si|bp|sp|ah|al|bh|bl|ch|cl|dh|dl|ax|bx|cx|dx|rax|rbx|rcx|rdx|rdi|rsi|rbp|rsp|cs|ds|ss|es|fs|gs|cr0|cr2|cr3|cr4|db0|db1|db2|db3|db6|db7|dr0|dr1|dr2|dr3|dr4|dr5|dr6|dr7|tr6|tr7|r0|r1|r2|r3|r4|r5|r6|r7|r8|r9|r10|r11|r12|r13|r14|r15|r0d|r1d|r2d|r3d|r4d|r5d|r6d|r7d|r8d|r9d|r10d|r11d|r12d|r13d|r14d|r15d|r0w|r1w|r2w|r3w|r4w|r5w|r6w|r7w|r8w|r9w|r10w|r11w|r12w|r13w|r14w|r15w|r0l|r1l|r2l|r3l|r4l|r5l|r6l|r7l|r8l|r9l|r10l|r11l|r12l|r13l|r14l|15l|st)+\\b'
+    'match': '\\b%?(r(0|1(|0|1|2|3|4|5)|2|3|4|5|6|7|8|9)|sp|lr|pc)+\\b'
     'name': 'storage.register'
   }
   {
@@ -151,11 +153,11 @@
     'name': 'constant.numeric.hex'
   }
   {
-    'match': '^global|.(align|asci|asciz|byte|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if|include|linkonece|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)\\b'
+    'match': '^global|.(align|ascii|asciz|byte|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|include|line|linkonce|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)\\b'
     'name': 'entity.directive'
   }
   {
-      'match': '\\+|-'
+      'match': '\\+|-|\\*|/|&|\\||\\^|~|%|!|<<|>>'
       'name': 'keyword.operator.artihmetic'
   }
 ]

@@ -1,6 +1,6 @@
-# x86 Assembly Language Support in Atom
+# ARM Assembly Language Support in Atom
 
-Adds syntax highlighting to x86 asssembly files in Atom.
+Adds syntax highlighting to ARM asssembly files in Atom.
 
 Originally [converted](http://atom.io/docs/latest/converting-a-text-mate-bundle)
 from the TextMate bundle:

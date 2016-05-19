@@ -1,3 +1,9 @@
+## 0.4.0
+* Converted to ARM ASM.
+* Added all ARMv7 instructions to instruction list
+* Changed comments style to remove hash sign and add at sign
+* Fixed a few discrepancies
+
 ## 0.3.0
 * fixed registers ending with h recognized as hex value
 

@@ -1,15 +1,15 @@
 {
-  "name": "language-x86asm",
+  "name": "language-armasm",
   "version": "0.8.0",
-  "description": "Adds syntax highlighting to x86 asm files in Atom.",
+  "description": "Adds syntax highlighting to ARM assembly files in Atom.",
   "keywords": [
     "asm",
     "assembler",
-    "x86",
+    "arm",
     "language",
     "grammar"
   ],
-  "repository": "https://github.com/SWW13/language-x86asm",
+  "repository": "https://github.com/nicholatian/language-armasm",
   "license": "GPLv3",
   "engines": {
     "atom": ">0.50.0"
