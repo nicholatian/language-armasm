@@ -123,7 +123,7 @@
     'name': 'keyword.mnemonic'
   }
   {
-    'match': '(?i)(r(0|1(|0|1|2|3|4|5)|2|3|4|5|6|7|8|9)|sp|lr|pc)+(?-i)[\\s]*'
+    'match': '(?i)(r(0|1(|0|1|2|3|4|5)|2|3|4|5|6|7|8|9)|sp|lr|pc)+(?-i)\\b'
     'name': 'storage.register'
   }
   {
@@ -131,19 +131,19 @@
     'name': 'entity.name.label'
   }
   {
-    'match': '\\$(0x[0-9a-fA-F]+)[\\s]+'
+    'match': '\\$(0x[0-9a-fA-F]+|[0-9]+)\\b'
     'name': 'constant.numeric.literal'
   }
   {
-    'match': '\\b[0-9]+[\\s]+'
+    'match': '\\b[0-9]+\\b'
     'name': 'constant.numeric.dec'
   }
   {
-    'match': '\\b([0-9a-fA-F]+h?|0x[0-9a-fA-F]+)[\\s]+'
+    'match': '\\b([0-9a-fA-F]+h?|0x[0-9a-fA-F]+)\\b'
     'name': 'constant.numeric.hex'
   }
   {
-    'match': '^global|[ ]*\\.(?i)(align|ascii|asciz|byte|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|include|line|linkonce|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)(?-i)[\\s]+'
+    'match': '^global|[ ]*\\.(?i)(align|ascii|asciz|byte|code|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|include|line|linkonce|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)(?-i)[\\s]+'
     'name': 'entity.directive'
   }
   {
