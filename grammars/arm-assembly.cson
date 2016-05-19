@@ -22,7 +22,7 @@
     'name': 'comment.block'
   }
   {
-    'match': '(?i)\\b((dword|qword|tword|db|dw|dd|dq|dt|do|dy|resb|resw|resd|resq|rest|reso|resy|incbin|equ|times)|(DWORD|QWORD|TWORD|DB|DW|DD|DQ|DT|DO|DY|RESB|RESW|RESD|RESQ|REST|RESO|RESY|INCBIN|EQU|TIMES))\\b'
+    'match': '(?i)\\b(?i)(dword|qword|tword|db|dw|dd|dq|dt|do|dy|resb|resw|resd|resq|rest|reso|resy|incbin|equ|times)(?-i)\\b'
     'name': 'support.type.asm'
   }
   {
@@ -115,7 +115,7 @@
     ]
   }
   {
-    'begin': '^\\s*[%#]\\s*((define|defined|elif|else|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|line|pragma|undef|endif)|(DEFINE|DEFINED|ELIF|ELSE|IF(|C|(|N(|OT))DEF|EQ(|T)|GE|GT|LE|LT|N(C|E(|S)))|LINE|PRAGMA|UNDEF|ENDIF))\\b'
+    'begin': '^\\s*[%#]\\s*(?i)(define|defined|elif|else|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|line|pragma|undef|endif)(?-i)\\b'
     'captures':
       '1':
         'name': 'keyword.control.import.c'
@@ -129,11 +129,11 @@
     ]
   }
   {
-    'match': '\\b((it(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al)))|(mrs|adc(|s)|add(|s)|adr|and(|s)|asr(|s)|b|bfc|bfi|bic(|s)|bl|blx|bx|cb(|n)z|cdp|cdp2|clrex|clz|cmn|cmp|cpy|dbg|dmb|dsb|eor(|s)|isb|ldc(|l)|ldc2(|l)|ldm|ldmdb|ldmea|ldr(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|lsl(|s)|lsr(|s)|mcr(|r)(|2)|mla|mls|mov(|s|t)|mrc(|2)|mrrc(|2)|mrs|msr|mul(|s)|mvn(|s)|neg|nop|orn(|s)|orr(|s)|pld|pli|pop|push|rbit|rev(|16|sh)|ror(|s)|rrx(|s)|rsb|sbc(|s)|sbfx|sdiv|sev|smlal|smull|ssat|stc(|2)(|l)|stm(|ia|ea)|str(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|sub(|s)|svc|sxt(b|h)|tbb|tbh|teq|tst|ubfx|udiv|umlal|umull|usat|uxtb|uxth|wfe|wfi|yield|(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al))|cb(|n)z|bkpt|cps(ie|id)|rsbs)|(IT(|EQ|NE|CS|CC|MI|PL|VS|VC|HI|LS|GE|LT|GT|LE|AL(|EQ|NE|CS|CC|MI|PL|VS|VC|HI|LS|GE|LT|GT|LE|AL(|EQ|NE|CS|CC|MI|PL|VS|VC|HI|LS|GE|LT|GT|LE|AL)))|(MRS|ADC(|S)|ADD(|S)|ADR|AND(|S)|ASR(|S)|B|BFC|BFI|BIC(|S)|BL|BLX|BX|CB(|N)Z|CDP|CDP2|CLREX|CLZ|CMN|CMP|CPY|DBG|DMB|DSB|EOR(|S)|ISB|LDC(|L)|LDC2(|L)|LDM|LDMDB|LDMEA|LDR(|B(|T)|D|EX(|B|H)|H(|T)|S(|B(|T)|H(|T))|T)|LSL(|S)|LSR(|S)|MCR(|R)(|2)|MLA|MLS|MOV(|S|T)|MRC(|2)|MRRC(|2)|MRS|MSR|MUL(|S)|MVN(|S)|NEG|NOP|ORN(|S)|ORR(|S)|PLD|PLI|POP|PUSH|RBIT|REV(|16|SH)|ROR(|S)|RRX(|S)|RSB|SBC(|S)|SBFX|SDIV|SEV|SMLAL|SMULL|SSAT|STC(|2)(|L)|STM(|IA|EA)|STR(|B(|T)|D|EX(|B|H)|H(|T)|S(|B(|T)|H(|T))|T)|SUB(|S)|SVC|SXT(B|H)|TBB|TBH|TEQ|TST|UBFX|UDIV|UMLAL|UMULL|USAT|UXTB|UXTH|WFE|WFI|YIELD|(|EQ|NE|CS|CC|MI|PL|VS|VC|HI|LS|GE|LT|GT|LE|AL))|CB(|N)Z|BKPT|CPS(IE|ID)|RSBS))+\\b'
+    'match': '\\b(?i)(it(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al)))|(mrs|adc(|s)|add(|s)|adr|and(|s)|asr(|s)|b|bfc|bfi|bic(|s)|bl|blx|bx|cb(|n)z|cdp|cdp2|clrex|clz|cmn|cmp|cpy|dbg|dmb|dsb|eor(|s)|isb|ldc(|l)|ldc2(|l)|ldm|ldmdb|ldmea|ldr(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|lsl(|s)|lsr(|s)|mcr(|r)(|2)|mla|mls|mov(|s|t)|mrc(|2)|mrrc(|2)|mrs|msr|mul(|s)|mvn(|s)|neg|nop|orn(|s)|orr(|s)|pld|pli|pop|push|rbit|rev(|16|sh)|ror(|s)|rrx(|s)|rsb|sbc(|s)|sbfx|sdiv|sev|smlal|smull|ssat|stc(|2)(|l)|stm(|ia|ea)|str(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|sub(|s)|svc|sxt(b|h)|tbb|tbh|teq|tst|ubfx|udiv|umlal|umull|usat|uxtb|uxth|wfe|wfi|yield|(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al))|cb(|n)z|bkpt|cps(ie|id)|rsbs)+(?-i)\\b'
     'name': 'keyword.mnemonic'
   }
   {
-    'match': '\\b%?(R(0|1(|0|1|2|3|4|5)|2|3|4|5|6|7|8|9)|r(0|1(|0|1|2|3|4|5)|2|3|4|5|6|7|8|9)|sp|lr|pc|SP|LR|PC)+\\b'
+    'match': '\\b%?(?i)(r(0|1(|0|1|2|3|4|5)|2|3|4|5|6|7|8|9)|sp|lr|pc)+(?-i)\\b'
     'name': 'storage.register'
   }
   {
@@ -153,7 +153,7 @@
     'name': 'constant.numeric.hex'
   }
   {
-    'match': '^global|.((align|ascii|asciz|byte|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|include|line|linkonce|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)|(ALIGN|ASCII|ASCIZ|BYTE|COMM|DATA|DOUBLE|EJECT|ELSE|ENDEF|ENDIF|EQU|EQUIV|ERR|EXTERN|FILE|FILL|FLOAT|GLOBL|GLOBAL|HWORD|IDENT|IF(|C|(|N(|OT))DEF|EQ(|T)|GE|GT|LE|LT|N(C|E(|S)))|INCLUDE|LINE|LINKONCE|LIST|LONG|MACRO|MRI|NOLIST|OCTA|ORG|PSIZE|QUAD|REPT|SECTION|SET|SHORT|SINGLE|SIZE|SKIP|SPACE|STRING|TAG|TYPE|VAL|WORD))\\b'
+    'match': '^global|\\.(?i)(align|ascii|asciz|byte|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|include|line|linkonce|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)(?-i)\\b'
     'name': 'entity.directive'
   }
   {
