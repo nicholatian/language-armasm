@@ -1,10 +1,11 @@
 {
   "name": "language-armasm",
   "version": "0.9.7",
-  "description": "Adds syntax highlighting to ARM assembly files in Atom.",
+  "description": "Better syntax highlighting for ARM assembly in Atom.",
   "keywords": [
     "asm",
     "assembler",
+    "assembly",
     "arm",
     "language",
     "grammar"

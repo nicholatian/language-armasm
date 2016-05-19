@@ -12,8 +12,8 @@
     'name': 'comment.line'
   }
   {
-    'begin': '^\\s*[\\#%]\\s*if\\s+0\\b'
-    'end': '^\\s*[\\#%]\\s*endif\\b'
+    'begin': '^\\s*[\\#%]\\s*if\\s+0[\\s]+'
+    'end': '^\\s*[\\#%]\\s*endif[\\s]+'
     'name': 'comment.preprocessor'
   }
   {
@@ -22,7 +22,7 @@
     'name': 'comment.block'
   }
   {
-    'match': '(?i)\\b(?i)(dword|qword|tword|db|dw|dd|dq|dt|do|dy|resb|resw|resd|resq|rest|reso|resy|incbin|equ|times)(?-i)\\b'
+    'match': '(?i)\\b(?i)(dword|qword|tword|db|dw|dd|dq|dt|do|dy|resb|resw|resd|resq|rest|reso|resy|incbin|equ|times)(?-i)[\\s]+'
     'name': 'support.type.asm'
   }
   {
@@ -32,11 +32,9 @@
   {
     'begin': '"'
     'end': '"'
+    'match': '"[^"\\\\]*(?:\\\\.[^"\\\\]*)*"'
     'name': 'string.quoted.asm'
     'patterns': [
-      {
-        'match': '"[^"\r\n]*"'
-      }
       {
         'include': '#string_escaped_char'
       }
@@ -48,18 +46,16 @@
   {
     'begin': '\''
     'end': '\''
+    'match': '\'[^\'\\\\]*(?:\\\\.[^\'\\\\]*)*\''
     'name': 'string.quoted.single.c'
     'patterns': [
-      {
-        'match': '\'[^\'\r\n]*\''
-      }
       {
         'include': '#string_escaped_char'
       }
     ]
   }
   {
-    'begin': '^\\s*[#%]\\s*(error|warning)\\b'
+    'begin': '^\\s*[#%]\\s*(error|warning)[\\s]+'
     'captures':
       '1':
         'name': 'keyword.control.import.error.c'
@@ -109,7 +105,7 @@
     ]
   }
   {
-    'begin': '^\\s*[%#]\\s*(?i)(define|defined|elif|else|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|line|pragma|undef|endif)(?-i)\\b'
+    'begin': '^\\s*[%#]\\s*(?i)(define|defined|elif|else|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|line|pragma|undef|endif)(?-i)[\\s]+'
     'captures':
       '1':
         'name': 'keyword.control.import.c'
@@ -123,31 +119,31 @@
     ]
   }
   {
-    'match': '\\b(?i)(it(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al)))|(mrs|adc(|s)|add(|s)|adr|and(|s)|asr(|s)|b|bfc|bfi|bic(|s)|bl|blx|bx|cb(|n)z|cdp|cdp2|clrex|clz|cmn|cmp|cpy|dbg|dmb|dsb|eor(|s)|isb|ldc(|l)|ldc2(|l)|ldm|ldmdb|ldmea|ldr(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|lsl(|s)|lsr(|s)|mcr(|r)(|2)|mla|mls|mov(|s|t)|mrc(|2)|mrrc(|2)|mrs|msr|mul(|s)|mvn(|s)|neg|nop|orn(|s)|orr(|s)|pld|pli|pop|push|rbit|rev(|16|sh)|ror(|s)|rrx(|s)|rsb|sbc(|s)|sbfx|sdiv|sev|smlal|smull|ssat|stc(|2)(|l)|stm(|ia|ea)|str(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|sub(|s)|svc|sxt(b|h)|tbb|tbh|teq|tst|ubfx|udiv|umlal|umull|usat|uxtb|uxth|wfe|wfi|yield|(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al))|cb(|n)z|bkpt|cps(ie|id)|rsbs)+(?-i)\\b'
+    'match': '\\b(?i)(it(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al)))|(mrs|adc(|s)|add(|s)|adr|and(|s)|asr(|s)|b|bfc|bfi|bic(|s)|bl|blx|bx|cb(|n)z|cdp|cdp2|clrex|clz|cmn|cmp|cpy|dbg|dmb|dsb|eor(|s)|isb|ldc(|l)|ldc2(|l)|ldm|ldmdb|ldmea|ldr(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|lsl(|s)|lsr(|s)|mcr(|r)(|2)|mla|mls|mov(|s|t)|mrc(|2)|mrrc(|2)|mrs|msr|mul(|s)|mvn(|s)|neg|nop|orn(|s)|orr(|s)|pld|pli|pop|push|rbit|rev(|16|sh)|ror(|s)|rrx(|s)|rsb|sbc(|s)|sbfx|sdiv|sev|smlal|smull|ssat|stc(|2)(|l)|stm(|ia|ea)|str(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|sub(|s)|svc|sxt(b|h)|tbb|tbh|teq|tst|ubfx|udiv|umlal|umull|usat|uxtb|uxth|wfe|wfi|yield|(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al))|cb(|n)z|bkpt|cps(ie|id)|rsbs)+(?-i)[\\s]+'
     'name': 'keyword.mnemonic'
   }
   {
-    'match': '\\b%?(?i)(r(0|1(|0|1|2|3|4|5)|2|3|4|5|6|7|8|9)|sp|lr|pc)+(?-i)\\b'
+    'match': '(?i)(r(0|1(|0|1|2|3|4|5)|2|3|4|5|6|7|8|9)|sp|lr|pc)+(?-i)[\\s]*'
     'name': 'storage.register'
   }
   {
-    'match': '^\\s*\\.?\\w+:\\s*(?=$|;@)'
+    'match': '^\\s*\\.?[\\w\\$]+:\\s*(?=$|;@)'
     'name': 'entity.name.label'
   }
   {
-    'match': '\\$(0x[0-9a-fA-F]+|0b[01]+|0o[0-7]+)\\b'
+    'match': '\\$(0x[0-9a-fA-F]+)[\\s]+'
     'name': 'constant.numeric.literal'
   }
   {
-    'match': '\\b[0-9]+\\b'
+    'match': '\\b[0-9]+[\\s]+'
     'name': 'constant.numeric.dec'
   }
   {
-    'match': '\\b([0-9a-fA-F]+h?|0x[0-9a-fA-F]+)\\b'
+    'match': '\\b([0-9a-fA-F]+h?|0x[0-9a-fA-F]+)[\\s]+'
     'name': 'constant.numeric.hex'
   }
   {
-    'match': '^global|[ ]*\\.(?i)(align|ascii|asciz|byte|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|include|line|linkonce|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)(?-i)\\b'
+    'match': '^global|[ ]*\\.(?i)(align|ascii|asciz|byte|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|include|line|linkonce|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)(?-i)[\\s]+'
     'name': 'entity.directive'
   }
   {
