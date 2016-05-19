@@ -32,6 +32,7 @@
   {
     'begin': '"'
     'end': '"'
+    'name': 'string.quoted.asm'
     'patterns': [
       {
         'include': '#string_escaped_char'
