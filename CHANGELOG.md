@@ -1,3 +1,6 @@
+## 0.9.2
+See 0.9.1
+
 ## 0.9.1
 * Fixed bug preventing capitalized instructions and such from highlighting
 
