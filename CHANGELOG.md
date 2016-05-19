@@ -1,3 +1,15 @@
+## 1.0.3
+Added highlighting for `.arm`, `.thumb`, and `.thumb_func` directives.
+
+## 1.0.2
+Added highlighting for `.code` directive.
+
+## 1.0.1
+Fixed comma-separated literals not highlighting properly.
+
+## 1.0.0
+Most of the basics should be in place.
+
 ## 0.9.7
 See 0.9.1
 
