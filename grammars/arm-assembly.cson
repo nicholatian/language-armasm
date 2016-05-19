@@ -31,14 +31,7 @@
   }
   {
     'begin': '"'
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.asm'
     'end': '"'
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.asm'
-    'name': 'string.quoted.asm'
     'patterns': [
       {
         'include': '#string_escaped_char'
@@ -50,13 +43,7 @@
   }
   {
     'begin': '\''
-    'beginCaptures':
-      '0':
-        'name': 'punctuation.definition.string.begin.c'
     'end': '\''
-    'endCaptures':
-      '0':
-        'name': 'punctuation.definition.string.end.c'
     'name': 'string.quoted.single.c'
     'patterns': [
       {
@@ -137,7 +124,7 @@
     'name': 'storage.register'
   }
   {
-    'match': '^\\s*\\.?\\w+:\\s*(?=$|;)'
+    'match': '^\\s*\\.?\\w+:\\s*(?=$|;@)'
     'name': 'entity.name.label'
   }
   {
