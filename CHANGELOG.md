@@ -1,4 +1,7 @@
-## 0.4.0
+## 0.9.1
+* Fixed bug preventing capitalized instructions and such from highlighting
+
+## 0.9.0
 * Converted to ARM ASM.
 * Added all ARMv7 instructions to instruction list
 * Changed comments style to remove hash sign and add at sign
