@@ -141,8 +141,9 @@
     'name': 'constant.numeric.hex'
   }
   {
-    'match': '^global|\\.(?i)(align|ascii|asciz|byte|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|include|line|linkonce|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)(?-i)\\b'
+    'begin': '^global|\\.(?i)(align|ascii|asciz|byte|comm|data|double|eject|else|endef|endif|equ|equiv|err|extern|file|fill|float|globl|global|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|include|line|linkonce|list|long|macro|mri|nolist|octa|org|psize|quad|rept|section|set|short|single|size|skip|space|string|tag|type|val|word)(?-i)\\b'
     'name': 'entity.directive'
+    'end': '(?=(?://|/\\*))|$'
   }
   {
       'match': '\\+|-|\\*|/|&|\\||\\^|~|%|!|<<|>>'
