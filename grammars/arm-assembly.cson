@@ -45,9 +45,6 @@
                 'include': '#section'
             }
             {
-                'include': '#directive_storage'
-            }
-            {
                 'include': '#directive'
             }
             {
@@ -194,7 +191,7 @@
     'label_global':
         'patterns': [
             {
-                'match': '^\\s*([\\.A-Za-z0-9_\\$]*):'
+                'match': '^\\s*([\\.A-KM-Za-z_\\$][\\.A-Za-z0-9_\\$]*):'
                 'captures':
                     '1':
                         'name': 'support.label.global.asm.arm'
@@ -219,21 +216,8 @@
     'directive':
         'patterns': [
             {
-                'match': '(?i)global|\\.(abort|(align|balign(|w|l))|altmacro|arch(|_extension)|arm|asci(i|z)|bss|bundle|(|2|4|8)byte|cantunwind|cfi|code|comm|cpu|data|def|desc|dim|(|l)double|dword|eabi_attribute|eject|else|endef|endfunc|endif|equ|equiv|eqv|err(|or)|even|exitm|extend|extern|fail|file|fill|float|fn(end|start)|force_thumb|fpu|func|glob(|a)l|gnu|handlerdata|hidden|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|incbin|include|inst(|.(n|w))|int(|ernal)|irp(|c)|lcomm|lflags|line|linkonce|list|ln|loc(|al)|long|ltorg|macro|movsp|mri|noaltmacro|nolist|object_arch|octa|offset|org|p2align|packed|pad|personality(|index)|pool|popsection|previous|print|protected|psize|purgem|pushsection|quad|reloc|rept|req|sbttl|scl|secrel32|section|set(|fp)|short|single|size|skip|sleb128|space|stab(d|n|s)|string(|8|16)|struct|subsection|symver|syntax|tag|text|thumb(|_(func|set))|title|tlsdescseq|type|uleb128|unreq|unwind_raw|val|vsave|version|vtable|warning|weak(|ref)|word|zero)(?-i)\\b'
+                'match': '(?i)global|\\.(abort|(align|balign(|w|l))|altmacro|arch(|_extension)|arm|asci(i|z)|bss|bundle|(|2|4|8)byte|cantunwind|cfi|code|comm|cpu|data|def|desc|dim|(|l)double|dword|eabi_attribute|eject|else|endef|endfunc|endif|equ|equiv|eqv|err(|or)|even|exitm|extend|extern|fail|file|fill|float|fn(end|start)|force_thumb|fpu|func|glob(|a)l|gnu|handlerdata|hidden|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|incbin|include|inst(|.(n|w))|int|internal|irp(|c)|lcomm|lflags|line|linkonce|list|ln|loc(|al)|long|ltorg|macro|movsp|mri|noaltmacro|nolist|object_arch|octa|offset|org|p2align|packed|pad|personality(|index)|pool|popsection|previous|print|protected|psize|purgem|pushsection|quad|qword|reloc|rept|req|sbttl|scl|secrel32|section|set(|fp)|short|single|size|skip|sleb128|space|stab(d|n|s)|string(|8|16)|struct|subsection|symver|syntax|tag|text|thumb(|_(func|set))|title|tlsdescseq|type|uleb128|unreq|unwind_raw|val|vsave|version|vtable|warning|weak(|ref)|word|zero)(?-i)\\b'
                 'name': 'constant.directive.asm.arm'
-            }
-        ]
-    'directive_storage':
-        'patterns': [
-            {
-                'match': '((?i)\\.(byte|hword|short|word|int|dword|long)(?-i))\\s+(((|\\.)L[\\.A-Za-z0-9_\\$]*)|([\\.A-Za-z0-9_\\$]*))\\s*'
-                'captures':
-                    '1':
-                        'name': 'keyword.directive.asm.arm'
-                    '3':
-                        'name': 'support.label.global.asm.arm'
-                    '4':
-                        'name': 'entity.label.local.asm.arm'
             }
         ]
     'operator':
