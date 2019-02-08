@@ -218,6 +218,10 @@
             {
                 'match': '(?i)global|\\.(abort|(align|balign(|w|l))|altmacro|arch(|_extension)|arm|asci(i|z)|bss|bundle|(|2|4|8)byte|cantunwind|cfi|code|comm|cpu|data|def|desc|dim|(|l)double|dword|eabi_attribute|eject|else|endef|endfunc|endif|equ|equiv|eqv|err(|or)|even|exitm|extend|extern|fail|file|fill|float|fn(end|start)|force_thumb|fpu|func|glob(|a)l|gnu|handlerdata|hidden|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|incbin|include|inst(|.(n|w))|int|internal|irp(|c)|lcomm|lflags|line|linkonce|list|ln|loc(|al)|long|ltorg|macro|endm|movsp|mri|noaltmacro|nolist|object_arch|octa|offset|org|p2align|packed|pad|personality(|index)|pool|popsection|previous|print|protected|psize|purgem|pushsection|quad|qword|reloc|rept|req|sbttl|scl|secrel32|section|set(|fp)|short|single|size|skip|sleb128|space|stab(d|n|s)|string(|8|16)|struct|subsection|symver|syntax|tag|text|thumb(|_(func|set))|title|tlsdescseq|type|uleb128|unreq|unwind_raw|val|vsave|version|vtable|warning|weak(|ref)|word|zero)(?-i)\\b'
                 'name': 'constant.directive.asm.arm'
+            },
+            {
+                'match': '#\\b(if(n?def)?|(el|end)?if|else|define|undef|include|pragma|error)\\b'
+                'name': 'constant.directive.asm.arm'
             }
         ]
     'operator':
