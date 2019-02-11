@@ -1,6 +1,6 @@
 {
   "name": "language-armasm",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Better syntax highlighting for ARM assembly in Atom.",
   "keywords": [
     "asm",
