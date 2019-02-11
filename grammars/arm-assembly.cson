@@ -158,7 +158,7 @@
                 'end': '\\*/'
                 'name': 'comment.block.asm.arm'
             }
-            
+
         ]
     'section':
         'patterns': [
@@ -170,7 +170,7 @@
     'instruction':
         'patterns': [
             {
-                'match': '\\b(?i)(it(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al)))|(mrs|adc(|s)|add(|s)|adr|and(|s)|asr(|s)|b|bfc|bfi|bic(|s)|bl|blx|bx|cb(|n)z|cdp|cdp2|clrex|clz|cmn|cmp|cpy|dbg|dmb|dsb|eor(|s)|isb|ldc(|l)|ldc2(|l)|ldm|ldmdb|ldmea|ldr(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|lsl(|s)|lsr(|s)|mcr(|r)(|2)|mla|mls|mov(|s|t)|mrc(|2)|mrrc(|2)|mrs|msr|mul(|s)|mvn(|s)|neg|nop|orn(|s)|orr(|s)|pld|pli|pop|push|rbit|rev(|16|sh)|ror(|s)|rrx(|s)|rsb|sbc(|s)|sbfx|sdiv|sev|smlal|smull|ssat|stc(|2)(|l)|stm(|ia|ea)|str(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|sub(|s)|svc|sxt(b|h)|tbb|tbh|teq|tst|ubfx|udiv|umlal|umull|usat|uxtb|uxth|wfe|wfi|yield|(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al))|cb(|n)z|bkpt|cps(ie|id)|rsbs|swi|svc)+(?-i)\\b\\s+'
+                'match': '\\b(?i)(it[et]{1,3}(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al)))|(mrs|adc(|s)|add(|s)|adr|and(|s)|asr(|s)|b|bfc|bfi|bic(|s)|bl|blx|bx|cb(|n)z|cdp|cdp2|clrex|clz|cmn|cmp|cpy|dbg|dmb|dsb|eor(|s)|isb|ldc(|l)|ldc2(|l)|ldm|ldmdb|ldmea|ldr(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|lsl(|s)|lsr(|s)|mcr(|r)(|2)|mla|mls|mov(|s|t)|mrc(|2)|mrrc(|2)|mrs|msr|mul(|s)|mvn(|s)|neg|nop|orn(|s)|orr(|s)|pld|pli|pop|push|rbit|rev(|16|sh)|ror(|s)|rrx(|s)|rsb|sbc(|s)|sbfx|sdiv|sev|smlal|smull|ssat|stc(|2)(|l)|stm(|ia|ea)|str(|b(|t)|d|ex(|b|h)|h(|t)|s(|b(|t)|h(|t))|t)|sub(|s)|svc|sxt(b|h)|tbb|tbh|teq|tst|ubfx|udiv|umlal|umull|usat|uxtb|uxth|wfe|wfi|yield|(|eq|ne|cs|cc|mi|pl|vs|vc|hi|ls|ge|lt|gt|le|al))|cb(|n)z|bkpt|cps(ie|id)|rsbs|swi|svc)+(?-i)\\b\\s+'
                 'name': 'keyword.instruction.asm.arm'
             }
         ]
@@ -216,7 +216,11 @@
     'directive':
         'patterns': [
             {
-                'match': '(?i)global|\\.(abort|(align|balign(|w|l))|altmacro|arch(|_extension)|arm|asci(i|z)|bss|bundle|(|2|4|8)byte|cantunwind|cfi|code|comm|cpu|data|def|desc|dim|(|l)double|dword|eabi_attribute|eject|else|endef|endfunc|endif|equ|equiv|eqv|err(|or)|even|exitm|extend|extern|fail|file|fill|float|fn(end|start)|force_thumb|fpu|func|glob(|a)l|gnu|handlerdata|hidden|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|incbin|include|inst(|.(n|w))|int|internal|irp(|c)|lcomm|lflags|line|linkonce|list|ln|loc(|al)|long|ltorg|macro|movsp|mri|noaltmacro|nolist|object_arch|octa|offset|org|p2align|packed|pad|personality(|index)|pool|popsection|previous|print|protected|psize|purgem|pushsection|quad|qword|reloc|rept|req|sbttl|scl|secrel32|section|set(|fp)|short|single|size|skip|sleb128|space|stab(d|n|s)|string(|8|16)|struct|subsection|symver|syntax|tag|text|thumb(|_(func|set))|title|tlsdescseq|type|uleb128|unreq|unwind_raw|val|vsave|version|vtable|warning|weak(|ref)|word|zero)(?-i)\\b'
+                'match': '(?i)global|\\.(abort|(align|balign(|w|l))|altmacro|arch(|_extension)|arm|asci(i|z)|bss|bundle|(|2|4|8)byte|cantunwind|cfi|code|comm|cpu|data|def|desc|dim|(|l)double|dword|eabi_attribute|eject|else|endef|endfunc|endif|equ|equiv|eqv|err(|or)|even|exitm|extend|extern|fail|file|fill|float|fn(end|start)|force_thumb|fpu|func|glob(|a)l|gnu|handlerdata|hidden|hword|ident|if(|c|(|n(|ot))def|eq(|t)|ge|gt|le|lt|n(c|e(|s)))|incbin|include|inst(|.(n|w))|int|internal|irp(|c)|lcomm|lflags|line|linkonce|list|ln|loc(|al)|long|ltorg|macro|endm|movsp|mri|noaltmacro|nolist|object_arch|octa|offset|org|p2align|packed|pad|personality(|index)|pool|popsection|previous|print|protected|psize|purgem|pushsection|quad|qword|reloc|rept|req|sbttl|scl|secrel32|section|set(|fp)|short|single|size|skip|sleb128|space|stab(d|n|s)|string(|8|16)|struct|subsection|symver|syntax|tag|text|thumb(|_(func|set))|title|tlsdescseq|type|uleb128|unreq|unwind_raw|val|vsave|version|vtable|warning|weak(|ref)|word|zero)(?-i)\\b'
+                'name': 'constant.directive.asm.arm'
+            },
+            {
+                'match': '#\\b(if(n?def)?|(el|end)?if|else|define|undef|include|pragma|error)\\b'
                 'name': 'constant.directive.asm.arm'
             }
         ]
